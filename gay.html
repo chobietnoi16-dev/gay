@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Huy có gay không?</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: pink;
+      font-family: Arial, sans-serif;
+    }
+    #questionContainer {
+      text-align: center;
+      position: relative;
+      width: 400px;
+      height: 300px;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: black ;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+    }
+    #yesBtn { left: 100px; top: 200px; }
+    #noBtn { left: 200px; top: 200px; }
+  </style>
+</head>
+<body>
+  <div id="questionContainer">
+    <h2>Huy có gay không?</h2>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const questionContainer = document.getElementById("questionContainer");
+
+    noBtn.addEventListener("mouseover", () => {
+      const newX = Math.floor(Math.random() * (questionContainer.offsetWidth - 100));
+      const newY = Math.floor(Math.random() * (questionContainer.offsetHeight - 50));
+      noBtn.style.left = `${newX}px`;
+      noBtn.style.top = `${newY}px`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      alert("Yay! Huy gay");
+    });
+  </script>
+</body>
+</html>
